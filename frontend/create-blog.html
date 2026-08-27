@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Blog — Inkwell</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="wrap">
+      <a href="index.html" class="brand">Ink<span>well</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="login.html" data-nav="guest">Login</a>
+        <a href="register.html" data-nav="guest" class="btn">Start Writing</a>
+        <a href="dashboard.html" data-nav="user">Dashboard</a>
+        <a href="create-blog.html" class="active" data-nav="user">Create Blog</a>
+        <a href="profile.html" data-nav="user">Profile</a>
+        <a href="#" data-nav="user" data-action="logout">Logout</a>
+      </nav>
+    </div>
+    <div class="masthead-rule"></div>
+  </header>
+
+  <main class="auth-page">
+    <div class="auth-card" style="max-width: 560px;">
+      <p class="eyebrow" id="form-eyebrow">New draft</p>
+      <h1 id="form-heading">Create a blog post</h1>
+
+      <div class="form-msg"></div>
+
+      <form id="create-blog-form" novalidate>
+        <div class="field">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" placeholder="A short, clear title" maxlength="100" required />
+          <div class="field-error"></div>
+        </div>
+
+        <div class="field">
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="">Select a category…</option>
+            <option value="Craft">Craft</option>
+            <option value="Dev">Dev</option>
+            <option value="Notes">Notes</option>
+            <option value="Life">Life</option>
+          </select>
+          <div class="field-error"></div>
+        </div>
+
+        <div class="field">
+          <label for="excerpt">Excerpt</label>
+          <input type="text" id="excerpt" name="excerpt" placeholder="One sentence that pulls readers in" required />
+          <div class="field-error"></div>
+        </div>
+
+        <div class="field">
+          <label for="content">Content</label>
+          <textarea id="content" name="content" rows="8" placeholder="Write your post…" required></textarea>
+          <div class="field-error"></div>
+        </div>
+
+        <button type="submit" class="btn btn-block" id="form-submit-btn">Publish</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="wrap">
+    <span>© 2026 Inkwell. Built as a learning project.</span>
+    <span>Home · Login · Register · Dashboard · Create Blog</span>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
